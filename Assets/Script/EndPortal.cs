@@ -20,10 +20,8 @@ public class EndPortal : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log("PlayerCol: " + PlayerCol); // 플레이어 충돌 상태 확인
         if (PlayerCol && Input.GetKeyDown(KeyCode.Z))
         {
-            Debug.Log("Attempting to load scene: " + Main); // 씬 로딩 시도 확인
             SceneManager.LoadScene("Main");
         }
     }
@@ -33,7 +31,6 @@ public class EndPortal : MonoBehaviour
         if (collider2D.gameObject == Player)
         {
             PlayerCol = true;
-            Debug.Log("Player entered the portal area."); // 플레이어 충돌 시작 확인
         }
     }
 
@@ -43,7 +40,6 @@ public class EndPortal : MonoBehaviour
         if (collider2D.gameObject == Player)
         {
             PlayerCol = false;
-            Debug.Log("Player exited the portal area."); // 플레이어 충돌 종료 확인
         }
     }
 
