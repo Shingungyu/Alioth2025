@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce; // 플레이어 점프력
 
     private bool onGround = true; // 플레이어 지면 접촉
-
-    private Vector2 lookDirection = Vector2.right;
+    public bool isColliding = false;
 
     private Rigidbody2D rigid;
     private Animator anim;
@@ -31,13 +30,11 @@ public class PlayerController : MonoBehaviour
         // 플레이어가 바라보는 방향 전환, 걷기 애니메이션
         if (moveDirection > 0)
         {
-            lookDirection = Vector2.right;
             transform.localScale = new Vector2(1, 1);
             anim.SetBool("isWalking", true);
         }
         else if (moveDirection < 0)
         {
-            lookDirection = Vector2.left;
             transform.localScale = new Vector2(-1, 1);
             anim.SetBool("isWalking", true);
         }
@@ -57,10 +54,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Debug.DrawRay(rigid.position, Vector2.down, new Color(0, 1, 0));
-        Debug.DrawRay(rigid.position, lookDirection, new Color(0, 1, 0));
 
         RaycastHit2D bottomRay = Physics2D.Raycast(rigid.position, Vector2.down, 1, LayerMask.GetMask("BG1"));
-        RaycastHit2D frontRay = Physics2D.Raycast(rigid.position, lookDirection, 1, LayerMask.GetMask("BG1"));
 
         if (bottomRay.collider != null)
         {
@@ -74,12 +69,9 @@ public class PlayerController : MonoBehaviour
             onGround = false;
         }
 
-        if (frontRay.collider != null)
+        if (isColliding)
         {
-            if (frontRay.distance < 0.3f)
-            {
-                rigid.velocity = new Vector2(0, rigid.velocity.y);
-            }
+            rigid.velocity = new Vector2(0, rigid.velocity.y);
         }
     }
 
