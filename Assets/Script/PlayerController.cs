@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed; // 플레이어 이동 속도
     public float jumpForce; // 플레이어 점프력
+    private int jumpCount = 2; // 점프 카운트 추적
 
     private bool onGround = true; // 플레이어 지면 접촉
-    public bool isColliding = false;
+    public bool isColliding = false; // 벽 접촉 확인
 
     private Rigidbody2D rigid;
     private Animator anim;
@@ -43,9 +44,19 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isWalking", false);
         }
 
-        if (Input.GetButtonDown("Jump") && onGround)
+        if (onGround)
         {
-            rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            jumpCount = 2;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpCount--;
+
+            if (jumpCount > 0)
+            {
+                rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
         }
 
         UpdateAnimation();
