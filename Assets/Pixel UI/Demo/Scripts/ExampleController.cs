@@ -19,7 +19,6 @@ namespace PixelsoftGames.PixelUI
 
         private Image image;
         private Shake shake = null;
-        private bool isBeingAttacked = false;
         private BoxCollider2D col = null;
 
         // Use this for initialization
@@ -40,7 +39,6 @@ namespace PixelsoftGames.PixelUI
             if (collision.name == "Cubits" && !shake.isActiveAndEnabled)
             {
                 shake.enabled = true;
-                isBeingAttacked = true;
 
                 if (BeingAttacked != null)
                 {
@@ -54,7 +52,6 @@ namespace PixelsoftGames.PixelUI
             if (collision.name == "Cubits" && shake.isActiveAndEnabled)
             {
                 shake.enabled = false;
-                isBeingAttacked = false;
 
                 if (AttackStopped != null)
                 {
