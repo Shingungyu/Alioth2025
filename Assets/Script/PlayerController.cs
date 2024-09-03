@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
             if (rigid.velocity.y > 0)
             {
                 anim.SetBool("isJumping", true);
+                anim.SetBool("isFalling", false);
             }
             else
             {
