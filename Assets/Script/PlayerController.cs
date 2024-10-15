@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         // 지면 접촉 시, 점프 카운트 초기화
         if (onGround)
         {
-            jumpCount = 2;
+            jumpCount = 1;
         }
 
         // 점프 키 누를 시, 점프 카운트 조건에 따라 점프 발생
