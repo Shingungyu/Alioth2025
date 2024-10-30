@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     private void Die()
     {
 
@@ -121,6 +122,11 @@ public class PlayerController : MonoBehaviour
 
         // 애니메이션이 전환될 시간을 잠시 기다립니다.
         StartCoroutine(WaitForAnimation());
+    }
+
+    private void GoUp()
+    {
+        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
     }
 
     private IEnumerator WaitForAnimation()
@@ -139,6 +145,15 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("JumpingBar"))
+        {
+            // GoUp(); 위로 튕김
+            // jumpForce = 7; 점프력 더 강해짐
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("DeathZone"))
@@ -146,5 +161,4 @@ public class PlayerController : MonoBehaviour
             Die();
         }
     }
-
 }
