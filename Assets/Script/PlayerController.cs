@@ -48,18 +48,19 @@ public class PlayerController : MonoBehaviour
         // 지면 접촉 시, 점프 카운트 초기화
         if (onGround)
         {
-            jumpCount = 2;
+            jumpCount = 1;
         }
 
         // 점프 키 누를 시, 점프 카운트 조건에 따라 점프 발생
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             jumpCount--;
 
-            if (jumpCount > 0)
-            {
-                rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
+            // y축 속도를 0으로 초기화하여 이전 점프/하강 속도를 제거
+            rigid.velocity = new Vector2(rigid.velocity.x, 0);
+
+            // 점프력을 적용
+            rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
         // 점프, 추락 애니메이션 업데이트
