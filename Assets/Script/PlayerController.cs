@@ -48,18 +48,19 @@ public class PlayerController : MonoBehaviour
         // 지면 접촉 시, 점프 카운트 초기화
         if (onGround)
         {
-            jumpCount = 2;
+            jumpCount = 1;
         }
 
         // 점프 키 누를 시, 점프 카운트 조건에 따라 점프 발생
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             jumpCount--;
 
-            if (jumpCount > 0)
-            {
-                rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
+            // y축 속도를 0으로 초기화하여 이전 점프/하강 속도를 제거
+            rigid.velocity = new Vector2(rigid.velocity.x, 0);
+
+            // 점프력을 적용
+            rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
         // 점프, 추락 애니메이션 업데이트
@@ -111,6 +112,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     private void Die()
     {
 
@@ -121,6 +123,11 @@ public class PlayerController : MonoBehaviour
 
         // 애니메이션이 전환될 시간을 잠시 기다립니다.
         StartCoroutine(WaitForAnimation());
+    }
+
+    private void GoUp()
+    {
+        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
     }
 
     private IEnumerator WaitForAnimation()
@@ -139,6 +146,15 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("JumpingBar"))
+        {
+            // GoUp(); 위로 튕김
+            // jumpForce = 7; 점프력 더 강해짐
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("DeathZone"))
@@ -146,5 +162,4 @@ public class PlayerController : MonoBehaviour
             Die();
         }
     }
-
 }

@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LoadGame : MonoBehaviour
 {
+
+    public string stage1_1;
+
     public void NewGame()// 새로하기 버튼 실행 함수
     {
-        SceneManager.LoadScene("Main1"); // Main1 씬 실행
+        SceneManager.LoadScene(stage1_1); // Stage1-1 씬 실행
     }
     public void ContinueGame() // 이어하기 버튼 실행 함수
     {
