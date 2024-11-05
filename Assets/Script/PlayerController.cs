@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed; // 플레이어 이동 속도
-    public float jumpForce; // 플레이어 점프력
+    float moveSpeed = 6.0f; // 플레이어 이동 속도
+    float jumpForce = 13.5f; // 플레이어 점프력
     private int jumpCount = 2; // 점프 카운트 추적
 
     private bool onGround = true; // 플레이어 지면 접촉
@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        // 게임 시작 시 Rigidbody2D의 중력 설정
+        rigid.gravityScale = 4.0f; // 원하는 중력 값으로 설정
     }
 
     void Update()
