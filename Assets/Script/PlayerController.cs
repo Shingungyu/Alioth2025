@@ -151,11 +151,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("JumpingBar"))
+        /*if (collision.gameObject.CompareTag("JumpingBar"))
         {
             // GoUp(); À§·Î Æ¨±è
             // jumpForce = 7; Á¡ÇÁ·Â ´õ °­ÇØÁü
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
