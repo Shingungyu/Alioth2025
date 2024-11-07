@@ -20,7 +20,7 @@ public class Arrow : MonoBehaviour
 
     void Update()
     {
-        if (charScreenPosition.y >= 1080)
+        if (charScreenPosition.y >= Screen.height)
         {
             arrowPosition.position = new Vector2(charPosition.position.x, 4);
             SetAlpha(1);
