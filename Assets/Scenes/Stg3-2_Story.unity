@@ -825,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3a070408aa941ab83ae10be1708848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intensity: 0
+  _intensity: 0.3041956
   _shader: {fileID: 4800000, guid: ba40dc630e1d9417cb9ea22586ece1e1, type: 3}
 --- !u!1 &658310715
 GameObject:
@@ -3080,6 +3080,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1281404882370638, guid: 84bb8dcedcb75424b95f53e6809df043, type: 3}
       propertyPath: m_Name
+      value: ClearKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281404882370638, guid: 84bb8dcedcb75424b95f53e6809df043, type: 3}
+      propertyPath: m_TagString
       value: ClearKey
       objectReference: {fileID: 0}
     - target: {fileID: 4440362423316516, guid: 84bb8dcedcb75424b95f53e6809df043, type: 3}
