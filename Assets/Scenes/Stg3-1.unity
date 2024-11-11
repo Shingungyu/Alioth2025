@@ -845,9 +845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5eecca0c3255f489240ef73cafcf8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  jumpForce: 13.5
-  isColliding: 0
 --- !u!1 &685542108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,6 +2102,14 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6301716921138554210, guid: 4abdc68871a5de7418637786711ac714, type: 3}
+      propertyPath: jumpForce
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301716921138554210, guid: 4abdc68871a5de7418637786711ac714, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6825535132303465684, guid: 4abdc68871a5de7418637786711ac714, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2198,6 +2203,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1281404882370638, guid: 84bb8dcedcb75424b95f53e6809df043, type: 3}
       propertyPath: m_Name
+      value: ClearKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281404882370638, guid: 84bb8dcedcb75424b95f53e6809df043, type: 3}
+      propertyPath: m_TagString
       value: ClearKey
       objectReference: {fileID: 0}
     - target: {fileID: 4440362423316516, guid: 84bb8dcedcb75424b95f53e6809df043, type: 3}

@@ -16,11 +16,24 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigid;
     private Animator anim;
 
+    public AudioSource audioSource; // 오디오 소스
+    public AudioClip jumpSound;
+    public AudioClip portalKeySound;
+    public AudioClip Deathsound;
+
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false; // 자동 재생 비활성화
+
+        // Resources 폴더에서 GameSounds/Playerjump 사운드 로드
+        jumpSound = Resources.Load<AudioClip>("GameSounds/Playerjump");
+        portalKeySound = Resources.Load<AudioClip>("GameSounds/Potalkey");
+        Deathsound = Resources.Load<AudioClip>("GameSounds/Deathsound");
     }
 
     void Update()
@@ -61,6 +74,10 @@ public class PlayerController : MonoBehaviour
 
             // 점프력을 적용
             rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+            PlayJumpSound();
+
+
         }
 
         // 점프, 추락 애니메이션 업데이트
@@ -159,7 +176,47 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DeathZone"))
         {
+            PlayerDeathSound();
             Die();
+
+
+        }
+        else if (collision.gameObject.CompareTag("ClearKey"))
+        {
+            Destroy(collision.gameObject); // CleayKey 아이템 삭제
+            PlayPortalKeySound(); // Potalkey 사운드 재생
         }
     }
+
+    //점프 사운드 함수
+
+    private void PlayJumpSound()
+    {
+        if (jumpSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(jumpSound);
+        }
+    }
+
+    //포탈 사운드 함수.
+    private void PlayPortalKeySound()
+    {
+        if (portalKeySound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(portalKeySound);
+        }
+    }
+
+    //죽음 사운드 함수.
+
+    private void PlayerDeathSound() {
+
+        if (Deathsound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(Deathsound);
+        }
+
+    }
+
+
 }
