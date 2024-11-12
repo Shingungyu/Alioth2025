@@ -17,9 +17,10 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     public AudioSource audioSource; // 오디오 소스
-    public AudioClip jumpSound;
-    public AudioClip portalKeySound;
-    public AudioClip Deathsound;
+
+    public AudioClip jumpSound; //점프사운드
+    public AudioClip portalKeySound; //포탈사운드
+    public AudioClip Deathsound; //죽음사운드
 
 
     void Awake()
