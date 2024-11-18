@@ -23,6 +23,11 @@ namespace RainbowArt.CleanFlatUI
         [SerializeField]
         TextMeshProUGUI text;
 
+        [SerializeField]
+        private string targetObjectName; // 오디오 소스가 있는 오브젝트의 이름
+
+        AudioSource audioSource;
+
         bool bDelayedUpdate = false;
 
         public bool HasText
@@ -55,6 +60,16 @@ namespace RainbowArt.CleanFlatUI
                 slider = GetComponent<Slider>();
             }            
             slider.onValueChanged.AddListener(SliderValueChange);
+
+            if (audioSource == null && !string.IsNullOrEmpty(targetObjectName))
+            {
+                GameObject targetObject = GameObject.Find(targetObjectName);
+                if (targetObject != null)
+                {
+                    audioSource = targetObject.GetComponent<AudioSource>();
+                }
+            }
+
             SliderValueChange(slider.value);
         }
 
@@ -81,7 +96,12 @@ namespace RainbowArt.CleanFlatUI
             {
                 float useValue = (float)Math.Round((double)slider.value, 1);
                 text.text = useValue +"";
-            }       
+            }
+
+            if (audioSource != null)
+            {
+                audioSource.volume = value; // 슬라이더 값으로 오디오 볼륨 설정
+            }
         } 
 
         public void OnPointerDown(PointerEventData eventData)

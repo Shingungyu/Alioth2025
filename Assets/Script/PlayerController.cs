@@ -6,21 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed; // ÇÃ·¹ÀÌ¾î ÀÌµ¿ ¼Óµµ
-    public float jumpForce; // ÇÃ·¹ÀÌ¾î Á¡ÇÁ·Â
-    private int jumpCount = 2; // Á¡ÇÁ Ä«¿îÆ® ÃßÀû
+    float moveSpeed = 6.0f; // í”Œë ˆì´ì–´ ì´ë™ ì†ë„
+    float jumpForce = 13.5f; // í”Œë ˆì´ì–´ ì í”„ë ¥
+    private int jumpCount = 2; // ì í”„ ì¹´ìš´íŠ¸ ì¶”ì 
 
-    private bool onGround = true; // ÇÃ·¹ÀÌ¾î Áö¸é Á¢ÃË
-    public bool isColliding = false; // º® Á¢ÃË È®ÀÎ
+    private bool onGround = true; // í”Œë ˆì´ì–´ ì§€ë©´ ì ‘ì´‰
+    public bool isColliding = false; // ë²½ ì ‘ì´‰ í™•ì¸
 
     private Rigidbody2D rigid;
     private Animator anim;
 
-    public AudioSource audioSource; // ¿Àµğ¿À ¼Ò½º
+    public AudioSource audioSource; // ì˜¤ë””ì˜¤ ì†ŒìŠ¤
 
-    public AudioClip jumpSound; //Á¡ÇÁ»ç¿îµå
-    public AudioClip portalKeySound; //Æ÷Å»»ç¿îµå
-    public AudioClip Deathsound; //Á×À½»ç¿îµå
+    public AudioClip jumpSound; //ì í”„ì‚¬ìš´ë“œ
+    public AudioClip portalKeySound; //í¬íƒˆì‚¬ìš´ë“œ
+    public AudioClip Deathsound; //ì£½ìŒì‚¬ìš´ë“œ
 
 
     void Awake()
@@ -29,21 +29,23 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false; // ÀÚµ¿ Àç»ı ºñÈ°¼ºÈ­
+        audioSource.playOnAwake = false; // ìë™ ì¬ìƒ ë¹„í™œì„±í™”
 
-        // Resources Æú´õ¿¡¼­ GameSounds/Playerjump »ç¿îµå ·Îµå
+        // Resources í´ë”ì—ì„œ GameSounds/Playerjump ì‚¬ìš´ë“œ ë¡œë“œ
         jumpSound = Resources.Load<AudioClip>("GameSounds/Playerjump");
         portalKeySound = Resources.Load<AudioClip>("GameSounds/Potalkey");
         Deathsound = Resources.Load<AudioClip>("GameSounds/Deathsound");
+        // ê²Œì„ ì‹œì‘ ì‹œ Rigidbody2Dì˜ ì¤‘ë ¥ ì„¤ì •
+        rigid.gravityScale = 4.0f; // ì›í•˜ëŠ” ì¤‘ë ¥ ê°’ìœ¼ë¡œ ì„¤ì •
     }
 
     void Update()
     {
-        // ÇÃ·¹ÀÌ¾î ÁÂ,¿ì ÀÌµ¿
+        // í”Œë ˆì´ì–´ ì¢Œ,ìš° ì´ë™
         float moveDirection = Input.GetAxis("Horizontal");
         rigid.velocity = new Vector2(moveDirection * moveSpeed, rigid.velocity.y);
 
-        // ÇÃ·¹ÀÌ¾î°¡ ¹Ù¶óº¸´Â ¹æÇâ ÀüÈ¯, °È±â ¾Ö´Ï¸ŞÀÌ¼Ç
+        // í”Œë ˆì´ì–´ê°€ ë°”ë¼ë³´ëŠ” ë°©í–¥ ì „í™˜, ê±·ê¸° ì• ë‹ˆë©”ì´ì…˜
         if (moveDirection > 0)
         {
             transform.localScale = new Vector2(1, 1);
@@ -59,21 +61,21 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isWalking", false);
         }
 
-        // Áö¸é Á¢ÃË ½Ã, Á¡ÇÁ Ä«¿îÆ® ÃÊ±âÈ­
+        // ì§€ë©´ ì ‘ì´‰ ì‹œ, ì í”„ ì¹´ìš´íŠ¸ ì´ˆê¸°í™”
         if (onGround)
         {
             jumpCount = 1;
         }
 
-        // Á¡ÇÁ Å° ´©¸¦ ½Ã, Á¡ÇÁ Ä«¿îÆ® Á¶°Ç¿¡ µû¶ó Á¡ÇÁ ¹ß»ı
+        // ì í”„ í‚¤ ëˆ„ë¥¼ ì‹œ, ì í”„ ì¹´ìš´íŠ¸ ì¡°ê±´ì— ë”°ë¼ ì í”„ ë°œìƒ
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             jumpCount--;
 
-            // yÃà ¼Óµµ¸¦ 0À¸·Î ÃÊ±âÈ­ÇÏ¿© ÀÌÀü Á¡ÇÁ/ÇÏ°­ ¼Óµµ¸¦ Á¦°Å
+            // yì¶• ì†ë„ë¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”í•˜ì—¬ ì´ì „ ì í”„/í•˜ê°• ì†ë„ë¥¼ ì œê±°
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
 
-            // Á¡ÇÁ·ÂÀ» Àû¿ë
+            // ì í”„ë ¥ì„ ì ìš©
             rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
             PlayJumpSound();
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        // Á¡ÇÁ, Ãß¶ô ¾Ö´Ï¸ŞÀÌ¼Ç ¾÷µ¥ÀÌÆ®
+        // ì í”„, ì¶”ë½ ì• ë‹ˆë©”ì´ì…˜ ì—…ë°ì´íŠ¸
         UpdateAnimation();
     }
 
@@ -137,9 +139,9 @@ public class PlayerController : MonoBehaviour
         rigid.velocity = Vector2.zero;
 
         anim.SetTrigger("isDie");
-        rigid.bodyType = RigidbodyType2D.Static; // ÇÃ·¹ÀÌ¾î À§Ä¡ °íÁ¤
+        rigid.bodyType = RigidbodyType2D.Static; // í”Œë ˆì´ì–´ ìœ„ì¹˜ ê³ ì •
 
-        // ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ÀüÈ¯µÉ ½Ã°£À» Àá½Ã ±â´Ù¸³´Ï´Ù.
+        // ì• ë‹ˆë©”ì´ì…˜ì´ ì „í™˜ë  ì‹œê°„ì„ ì ì‹œ ê¸°ë‹¤ë¦½ë‹ˆë‹¤.
         StartCoroutine(WaitForAnimation());
     }
 
@@ -150,10 +152,10 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator WaitForAnimation()
     {
-        yield return null; // ÇÑ ÇÁ·¹ÀÓ ´ë±â
-        yield return new WaitForSeconds(0.12f); // ¾à°£ÀÇ Ãß°¡ ´ë±â
+        yield return null; // í•œ í”„ë ˆì„ ëŒ€ê¸°
+        yield return new WaitForSeconds(0.12f); // ì•½ê°„ì˜ ì¶”ê°€ ëŒ€ê¸°
 
-        // »ç¸Á ¾Ö´Ï¸ŞÀÌ¼Ç ±æÀÌ¸¦ °¡Á®¿É´Ï´Ù.
+        // ì‚¬ë§ ì• ë‹ˆë©”ì´ì…˜ ê¸¸ì´ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
         float dieDuration = anim.GetCurrentAnimatorStateInfo(0).length;
         StartCoroutine(RestartScene(dieDuration));
     }
@@ -166,11 +168,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("JumpingBar"))
+        /*if (collision.gameObject.CompareTag("JumpingBar"))
         {
-            // GoUp(); À§·Î Æ¨±è
-            // jumpForce = 7; Á¡ÇÁ·Â ´õ °­ÇØÁü
-        }
+            // GoUp(); ìœ„ë¡œ íŠ•ê¹€
+            // jumpForce = 7; ì í”„ë ¥ ë” ê°•í•´ì§
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -184,12 +186,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("ClearKey"))
         {
-            Destroy(collision.gameObject); // CleayKey ¾ÆÀÌÅÛ »èÁ¦
-            PlayPortalKeySound(); // Potalkey »ç¿îµå Àç»ı
+            Destroy(collision.gameObject); // CleayKey ì•„ì´í…œ ì‚­ì œ
+            PlayPortalKeySound(); // Potalkey ì‚¬ìš´ë“œ ì¬ìƒ
         }
     }
 
-    //Á¡ÇÁ »ç¿îµå ÇÔ¼ö
+    //ì í”„ ì‚¬ìš´ë“œ í•¨ìˆ˜
 
     private void PlayJumpSound()
     {
@@ -199,7 +201,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Æ÷Å» »ç¿îµå ÇÔ¼ö.
+    //í¬íƒˆ ì‚¬ìš´ë“œ í•¨ìˆ˜.
     private void PlayPortalKeySound()
     {
         if (portalKeySound != null && audioSource != null)
@@ -208,7 +210,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Á×À½ »ç¿îµå ÇÔ¼ö.
+    //ì£½ìŒ ì‚¬ìš´ë“œ í•¨ìˆ˜.
 
     private void PlayerDeathSound() {
 

@@ -6,27 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-/*
-//Set properties in C# example codes.
-using RainbowArt.CleanFlatUI;
-public class SwitchDemo : MonoBehaviour
-{
-    //The Switch Component.
-    public Switch m_Switch;
-    void Start()
-    {
-        //Add OnValueChanged event listener.
-        m_Switch.OnValueChanged.AddListener(SwitchValueChange);
-        //Set current value.
-        m_Switch.IsOn = true;
-    }
-    public void SwitchValueChange(bool val)
-    {
-        Debug.Log("SwitchValueChange, value: " + val);
-    } 
-}
-*/
-
 namespace RainbowArt.CleanFlatUI
 {
     public class Switch : MonoBehaviour,IPointerDownHandler 
@@ -35,7 +14,10 @@ namespace RainbowArt.CleanFlatUI
         bool isOn = false;   
 
         [SerializeField]        
-        Animator animator;  
+        Animator animator;
+
+        [SerializeField]
+        AudioSource audioSource;
 
         [Serializable]
         public class SwitchEvent : UnityEvent<bool>{ }
@@ -103,6 +85,14 @@ namespace RainbowArt.CleanFlatUI
                     onValueChanged.Invoke(false);
                 } 
             }            
-        }  
+        }
+
+        public void PlaySound(AudioClip clip)
+        {
+            if (audioSource != null && clip != null)
+            {
+                audioSource.PlayOneShot(clip);
+            }
+        }
     }
 }
