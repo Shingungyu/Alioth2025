@@ -2770,6 +2770,10 @@ PrefabInstance:
       value: 13.5
       objectReference: {fileID: 0}
     - target: {fileID: 6301716921138554210, guid: 4abdc68871a5de7418637786711ac714, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e9baf41934083104eadfa161df9c802d, type: 3}
+    - target: {fileID: 6301716921138554210, guid: 4abdc68871a5de7418637786711ac714, type: 3}
       propertyPath: moveSpeed
       value: 6
       objectReference: {fileID: 0}
