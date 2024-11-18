@@ -11,8 +11,11 @@ public class chatController : MonoBehaviour
 
     public string writerText = "";
 
+    GameObject Canvas;
+
     void Start()
     {
+        Canvas = GameObject.Find("Canvas");
         StartCoroutine(TextPractice());
     }
 
@@ -41,10 +44,13 @@ public class chatController : MonoBehaviour
 
     }
 
-    IEnumerator TextPractice() { 
-       
+    IEnumerator TextPractice() {
+
+        yield return StartCoroutine(NormalChat("Alioth", "........."));
         yield return StartCoroutine(NormalChat("Alioth", "여긴 어디지?"));
-        yield return StartCoroutine(NormalChat("Alioth", "아까보다 더 추워진 기분인데.."));
-        yield return StartCoroutine(NormalChat("Alioth", "일단 가볼까."));
+        yield return StartCoroutine(NormalChat("Alioth", "좀 추워진거 같은데.."));
+        yield return StartCoroutine(NormalChat("Alioth", "일단 더 나아가보자."));
+        
+        Canvas.SetActive(false);
     }
 }
