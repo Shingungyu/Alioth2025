@@ -2020,7 +2020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 0}
-  backgroundSpeed: 0.05
+  backgroundSpeed: 0.01
 --- !u!114 &1082001315
 MonoBehaviour:
   m_ObjectHideFlags: 0
