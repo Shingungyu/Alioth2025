@@ -3074,6 +3074,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearKey
       objectReference: {fileID: 0}
+    - target: {fileID: 1281404882370638, guid: 84bb8dcedcb75424b95f53e6809df043, type: 3}
+      propertyPath: m_TagString
+      value: ClearKey
+      objectReference: {fileID: 0}
     - target: {fileID: 4440362423316516, guid: 84bb8dcedcb75424b95f53e6809df043, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3209,3 +3213,4 @@ SceneRoots:
   - {fileID: 1824648991}
   - {fileID: 1446157512}
   - {fileID: 305319920}
+  - {fileID: 586942965}
