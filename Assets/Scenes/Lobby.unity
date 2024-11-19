@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 671129686}
   - component: {fileID: 671129685}
   - component: {fileID: 671129684}
+  - component: {fileID: 671129687}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -519,6 +520,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671129682}
   m_CullTransparentMesh: 1
+--- !u!114 &671129687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671129682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7db9c784f3cf334099240675479f341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText: {fileID: 1710033287}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  normalColor: {r: 0, g: 0, b: 0, a: 1}
+  soundFilePath: GameSounds/Hover_sound
 --- !u!1 &930901483
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +548,7 @@ GameObject:
   - component: {fileID: 930901487}
   - component: {fileID: 930901486}
   - component: {fileID: 930901485}
+  - component: {fileID: 930901488}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -652,6 +670,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930901483}
   m_CullTransparentMesh: 1
+--- !u!114 &930901488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930901483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7db9c784f3cf334099240675479f341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText: {fileID: 35175842}
+  hoverColor: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
+  normalColor: {r: 0, g: 0, b: 0, a: 1}
+  soundFilePath: GameSounds/Hover_sound
 --- !u!1 &1214678114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1158,7 @@ GameObject:
   - component: {fileID: 1997522980}
   - component: {fileID: 1997522979}
   - component: {fileID: 1997522978}
+  - component: {fileID: 1997522981}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1245,6 +1280,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997522976}
   m_CullTransparentMesh: 1
+--- !u!114 &1997522981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997522976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7db9c784f3cf334099240675479f341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText: {fileID: 256893599}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  normalColor: {r: 0, g: 0, b: 0, a: 1}
+  soundFilePath: GameSounds/Hover_sound
 --- !u!1 &2122399038
 GameObject:
   m_ObjectHideFlags: 0
