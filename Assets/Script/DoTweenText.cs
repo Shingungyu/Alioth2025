@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
-
+//ABCDEFG
 /*public class DoTText : MonoBehaviour
 {
     Text a_text;
