@@ -1,10 +1,9 @@
-using RainbowArt.CleanFlatUI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class chatController : MonoBehaviour
+public class Story31 : MonoBehaviour
 {
     public Text ChatText;
     public Text CharacterName;
@@ -18,10 +17,9 @@ public class chatController : MonoBehaviour
         Canvas = GameObject.Find("Canvas");
         StartCoroutine(TextPractice());
         Time.timeScale = 0f;
-    
-}
+    }
 
-   
+
     IEnumerator NormalChat(string narrator, string narration)
     {
         int a = 0;
@@ -46,14 +44,11 @@ public class chatController : MonoBehaviour
 
     }
 
-    IEnumerator TextPractice() {
-
-        yield return StartCoroutine(NormalChat("Alioth", "........."));
-        yield return StartCoroutine(NormalChat("Alioth", "여긴 어디지?"));
-        yield return StartCoroutine(NormalChat("Alioth", "좀 추워진거 같은데.."));
-        yield return StartCoroutine(NormalChat("Alioth", "아까보다 점점 더 힘이 나는것 같기도 한거같아."));
-        yield return StartCoroutine(NormalChat("Alioth", "앞으로 3명만 더 구하면 되는거야. 힘내자."));
+    IEnumerator TextPractice()
+    {
+        yield return StartCoroutine(NormalChat("Alioth", "여기는 메라크의 행성인거같아."));
+        yield return StartCoroutine(NormalChat("Alioth", "메라크를 구하러가자."));
         Time.timeScale = 1f;
-        Canvas.SetActive(false);
+        Canvas.SetActive(false);  // 대사 출력 후 캔버스 비활성화
     }
 }
