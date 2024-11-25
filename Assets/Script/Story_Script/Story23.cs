@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class Story31 : MonoBehaviour
+public class Story23 : MonoBehaviour
 {
     public Text ChatText;
     public Text CharacterName;
@@ -46,8 +45,8 @@ public class Story31 : MonoBehaviour
 
     IEnumerator TextPractice()
     {
-        yield return StartCoroutine(NormalChat("Alioth", "여기는 페크다의 행성인거같아."));
-        yield return StartCoroutine(NormalChat("Alioth", "메라크를 구하러가자."));
+        yield return StartCoroutine(NormalChat("Alioth", "저기에 메라크의 힘이 있어."));
+        yield return StartCoroutine(NormalChat("Alioth", "저 힘을 가지고 빠져나가야해."));
         Time.timeScale = 1f;
         Canvas.SetActive(false);  // 대사 출력 후 캔버스 비활성화
     }
