@@ -95,4 +95,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stg6-4.unity
     guid: 7561a02d2f2cc494084a494b16978883
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 51b5479e8bede834296fe604ed843690
   m_configObjects: {}
