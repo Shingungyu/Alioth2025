@@ -20,4 +20,9 @@ public class LoadGame : MonoBehaviour
     {
         SceneManager.LoadScene("Option"); // Option 씬 실행 
     }
+
+    public void Exit()//설정 버튼 실행 함수
+    {
+        Application.Quit(); // Option 씬 실행 
+    }
 }
