@@ -4866,6 +4866,7 @@ GameObject:
   - component: {fileID: 1152908546}
   - component: {fileID: 1152908548}
   - component: {fileID: 1152908549}
+  - component: {fileID: 1152908550}
   m_Layer: 1
   m_Name: PrevPortal
   m_TagString: Untagged
@@ -4914,7 +4915,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fcc455172546e94cbf4d22662505266, type: 3}
   m_Color: {r: 0, g: 0.9129348, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5053,6 +5054,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Main1
+--- !u!95 &1152908550
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152908542}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a2324a855de01b48b4afde3188b8007, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1153354952
 GameObject:
   m_ObjectHideFlags: 0
@@ -6109,6 +6131,7 @@ GameObject:
   - component: {fileID: 1526057250}
   - component: {fileID: 1526057252}
   - component: {fileID: 1526057254}
+  - component: {fileID: 1526057255}
   m_Layer: 1
   m_Name: NextPortal
   m_TagString: Untagged
@@ -6157,7 +6180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fcc455172546e94cbf4d22662505266, type: 3}
   m_Color: {r: 0, g: 0.9129348, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6296,6 +6319,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Stg2-5
+--- !u!95 &1526057255
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526057246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a2324a855de01b48b4afde3188b8007, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1618241986
 GameObject:
   m_ObjectHideFlags: 0
