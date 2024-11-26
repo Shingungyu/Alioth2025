@@ -38,6 +38,7 @@ public class PauseManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        Time.timeScale = 1f; // 게임 재개
         SceneManager.LoadScene("Lobby"); // 메인 화면 씬 이름으로 로드
     }
 }
