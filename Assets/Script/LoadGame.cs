@@ -14,7 +14,7 @@ public class LoadGame : MonoBehaviour
     }
     public void ContinueGame() // 이어하기 버튼 실행 함수
     {
-        SceneManager.LoadScene("Continue"); // Continue 씬 실행 
+        SceneManager.LoadScene("Tutorial_1"); // Continue 씬 실행 
     }
     public void Option()//설정 버튼 실행 함수
     {

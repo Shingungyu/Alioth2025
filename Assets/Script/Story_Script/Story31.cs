@@ -47,7 +47,7 @@ public class Story31 : MonoBehaviour
     IEnumerator TextPractice()
     {
         yield return StartCoroutine(NormalChat("Alioth", "여기는 페크다의 행성인거같아."));
-        yield return StartCoroutine(NormalChat("Alioth", "메라크를 구하러가자."));
+        yield return StartCoroutine(NormalChat("Alioth", "페크다를 구하러가자."));
         Time.timeScale = 1f;
         Canvas.SetActive(false);  // 대사 출력 후 캔버스 비활성화
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartStoryScene : MonoBehaviour
 {
@@ -22,6 +23,16 @@ public class StartStoryScene : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             currentSpeed *= boostMultiplier;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            SceneManager.LoadScene("Stg1-1");
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            SceneManager.LoadScene("Lobby");
         }
 
         // 텍스트를 위로 이동
