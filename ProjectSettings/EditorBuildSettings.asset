@@ -11,18 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Option.unity
     guid: d337d967637c63140b7514f6380d3e51
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tutorial_1.unity
     guid: 30bc73b65026fd645923ad7faceec49a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tutorial_2.unity
     guid: 945082460f4113a44b1efaa21b4b6799
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tutorial_3.unity
     guid: d1ca9afd31ca8b247aa179e80bbff6c7
-  - enabled: 0
-    path: Assets/Scenes/Stg4-2.unity
-    guid: a6a9572e48ed58e48bc1093871334025
   - enabled: 1
     path: Assets/Scenes/Stg1-1.unity
     guid: 2612e0a162cc3c54eb376d8439809a20
@@ -53,4 +50,49 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stg2-5.unity
     guid: 3c143613cc2de8c4eaf8821b18444ec9
+  - enabled: 1
+    path: Assets/Scenes/Stg3-1.unity
+    guid: 3ccf29d1fa70cd24b957813d65ba55cb
+  - enabled: 1
+    path: Assets/Scenes/Stg3-2_Story.unity
+    guid: f23123d05a2a8fc4da1612f1973ab745
+  - enabled: 1
+    path: Assets/Scenes/Stg3-3.unity
+    guid: b301b205542a7cd4688a5b31684aad99
+  - enabled: 1
+    path: Assets/Scenes/Stg3-4.unity
+    guid: 1c3b4efa25beda942a5554ef61ce3bdb
+  - enabled: 1
+    path: Assets/Scenes/Stg4-1_(Story).unity
+    guid: fa4119310195a8745aeedf669a2bdadb
+  - enabled: 1
+    path: Assets/Scenes/Stg4-2.unity
+    guid: a6a9572e48ed58e48bc1093871334025
+  - enabled: 1
+    path: Assets/Scenes/Stg4-3.unity
+    guid: 5c16733db13084a4d9bac928ee19872a
+  - enabled: 1
+    path: Assets/Scenes/Stg5-1.unity
+    guid: 2712f44c2cd94f542a632aa5d2cf11e8
+  - enabled: 1
+    path: Assets/Scenes/Stg5-2.unity
+    guid: 65dab59749f8f8746bbc289bc5d2b8bd
+  - enabled: 1
+    path: Assets/Scenes/Stg5-3.unity
+    guid: a6a0a4e2d6f6e51448e8fbec497c972f
+  - enabled: 1
+    path: Assets/Scenes/Stg5-4.unity
+    guid: 78dc94ae32101114d8ff121ff2d16b34
+  - enabled: 1
+    path: Assets/Scenes/Stg6-1.unity
+    guid: c12c7a1068b5b0040b245397124fb0f7
+  - enabled: 1
+    path: Assets/Scenes/Stg6-2.unity
+    guid: 5b7401cf1e95875478ed4ae190fce54a
+  - enabled: 1
+    path: Assets/Scenes/Stg6-3.unity
+    guid: 141c1a0c2e9943d4babfb5b8147a06b4
+  - enabled: 1
+    path: Assets/Scenes/Stg6-4.unity
+    guid: 7561a02d2f2cc494084a494b16978883
   m_configObjects: {}
