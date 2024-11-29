@@ -2840,7 +2840,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.6553, y: 0.7, z: 0}
-  m_LocalScale: {x: 3, y: 0.5944, z: 1}
+  m_LocalScale: {x: 4, y: 0.5944, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1836827452}
@@ -2860,7 +2860,7 @@ MonoBehaviour:
   startPos: {fileID: 341975186}
   endPos: {fileID: 1670281405}
   desPos: {fileID: 0}
-  speed: 2
+  speed: 4
 --- !u!251 &893043765
 PlatformEffector2D:
   m_ObjectHideFlags: 0
