@@ -104,6 +104,7 @@ public class AudioManager : MonoBehaviour
         if (backgroundAudio.clip != newClip)
         {
             backgroundAudio.clip = newClip;
+            backgroundAudio.loop = true;
 
             // 새로운 클립이 설정되었을 경우에만 재생
             if (backgroundAudio.clip != null)
