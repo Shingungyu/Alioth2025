@@ -1,97 +1,67 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace RainbowArt.CleanFlatUI
 {
-    public class Switch : MonoBehaviour,IPointerDownHandler 
+    public class Switch : MonoBehaviour, IPointerDownHandler
     {
         [SerializeField]
-        bool isOn = false;   
+        bool isOn = false;
 
-        [SerializeField]        
+        [SerializeField]
         Animator animator;
 
         [SerializeField]
-        AudioSource audioSource;
+        AudioSource backgroundAudio;
 
-        [Serializable]
-        public class SwitchEvent : UnityEvent<bool>{ }
+        [System.Serializable]
+        public class SwitchEvent : UnityEvent<bool> { }
 
         [SerializeField]
-        SwitchEvent onValueChanged = new SwitchEvent();     
-             
+        SwitchEvent onValueChanged = new SwitchEvent();
+
         public bool IsOn
         {
             get => isOn;
             set
             {
-                if(isOn == value)
-                {
-                    return;
-                }
+                if (isOn == value) return;
                 isOn = value;
                 UpdateGUI(false);
             }
-        }    
+        }
 
-        public SwitchEvent OnValueChanged
+        void Start()
         {
-            get => onValueChanged;
-            set
-            {
-                onValueChanged = value;
-            }
-        }  
-
-        void Start () 
-        {
-           UpdateGUI(true);
-        }   
+            UpdateGUI(true);
+        }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            isOn = !isOn;  
-            UpdateGUI(false);      
-        }  
+            isOn = !isOn; // 스위치 상태 토글
+            UpdateGUI(false); // UI 업데이트
+            ToggleBackgroundAudio(isOn); // 배경 음악 토글
+        }
 
         void UpdateGUI(bool isInit)
         {
-            if(isInit)
+            if (isInit)
             {
-                if(isOn)
-                {
-                    animator.Play("On Init",0,0); 
-                }
-                else
-                {
-                    animator.Play("Off Init",0,0); 
-                } 
+                animator.Play(isOn ? "On Init" : "Off Init", 0, 0);
             }
             else
             {
-                if(isOn)
-                {
-                    animator.Play("On",0,0); 
-                    onValueChanged.Invoke(true);
-                }
-                else
-                {
-                    animator.Play("Off",0,0); 
-                    onValueChanged.Invoke(false);
-                } 
-            }            
+                animator.Play(isOn ? "On" : "Off", 0, 0);
+                onValueChanged.Invoke(isOn);
+            }
         }
 
-        public void PlaySound(AudioClip clip)
+        public void ToggleBackgroundAudio(bool isOn)
         {
-            if (audioSource != null && clip != null)
+            if (backgroundAudio != null)
             {
-                audioSource.PlayOneShot(clip);
+                backgroundAudio.mute = !isOn;
             }
         }
     }

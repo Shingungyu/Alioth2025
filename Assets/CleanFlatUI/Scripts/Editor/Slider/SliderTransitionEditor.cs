@@ -15,13 +15,15 @@ namespace RainbowArt.CleanFlatUI
         SerializedProperty animator;
         SerializedProperty hasText;
         SerializedProperty text;
+        SerializedProperty targetObjectName;
 
         protected virtual void OnEnable()
         {
             slider = serializedObject.FindProperty("slider");    
             animator = serializedObject.FindProperty("animator");    
             hasText = serializedObject.FindProperty("hasText");
-            text = serializedObject.FindProperty("text");                      
+            text = serializedObject.FindProperty("text");
+            targetObjectName = serializedObject.FindProperty("targetObjectName");
         }
 
         public override void OnInspectorGUI()
@@ -33,7 +35,8 @@ namespace RainbowArt.CleanFlatUI
             if(hasText.boolValue == true)
             {
                 EditorGUILayout.PropertyField(text);
-            }                     
+            }
+            EditorGUILayout.PropertyField(targetObjectName);
             serializedObject.ApplyModifiedProperties();           
         }      
     }

@@ -14,12 +14,14 @@ namespace RainbowArt.CleanFlatUI
         SerializedProperty isOn;        
         SerializedProperty animator;        
         SerializedProperty onValueChanged;
+        SerializedProperty backgroundAudio;
 
         protected virtual void OnEnable()
         {
             isOn = serializedObject.FindProperty("isOn");
             animator = serializedObject.FindProperty("animator");              
             onValueChanged = serializedObject.FindProperty("onValueChanged");
+            backgroundAudio = serializedObject.FindProperty("backgroundAudio");
         }
 
         public override void OnInspectorGUI()
@@ -28,7 +30,8 @@ namespace RainbowArt.CleanFlatUI
             EditorGUILayout.PropertyField(isOn); 
             EditorGUILayout.PropertyField(animator); 
             EditorGUILayout.Space();
-            EditorGUILayout.PropertyField(onValueChanged);  
+            EditorGUILayout.PropertyField(onValueChanged);
+            EditorGUILayout.PropertyField(backgroundAudio);
             serializedObject.ApplyModifiedProperties();           
         }
     }

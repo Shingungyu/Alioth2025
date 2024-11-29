@@ -24,7 +24,7 @@ namespace RainbowArt.CleanFlatUI
         TextMeshProUGUI text;
 
         [SerializeField]
-        private string targetObjectName; // 오디오 소스가 있는 오브젝트의 이름
+        string targetObjectName; // 오디오 소스가 있는 오브젝트의 이름
 
         AudioSource audioSource;
 
@@ -60,16 +60,20 @@ namespace RainbowArt.CleanFlatUI
                 slider = GetComponent<Slider>();
             }            
             slider.onValueChanged.AddListener(SliderValueChange);
+            GameObject targetObject = GameObject.Find(targetObjectName);
 
-            if (audioSource == null && !string.IsNullOrEmpty(targetObjectName))
+            // 오브젝트가 존재하고 AudioSource 컴포넌트가 있다면 할당
+            if (targetObject != null)
             {
-                GameObject targetObject = GameObject.Find(targetObjectName);
-                if (targetObject != null)
-                {
-                    audioSource = targetObject.GetComponent<AudioSource>();
-                }
+                audioSource = targetObject.GetComponent<AudioSource>();
+                Debug.Log("AudioSource found: " + audioSource); // 디버그 로그 출력
+            }
+            else
+            {
+                Debug.LogError("Target object not found: " + targetObjectName);
             }
 
+            // SliderValueChange 함수 호출
             SliderValueChange(slider.value);
         }
 
