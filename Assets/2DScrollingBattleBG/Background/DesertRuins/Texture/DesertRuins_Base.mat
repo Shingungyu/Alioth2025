@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: DesertRuins_Base
-  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 429dfaf8497d2e14b9be3f01ba571d38, type: 3}
   m_Parent: {fileID: 2100000, guid: d478b96e6f680e748aa220f7bf670716, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -30,8 +30,7 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: fec9123cfc5198a4e8cd6c0b33bb0748, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0.15756242, y: 0}
-        m_Offset: {x: 0.121965095, y: 0}
+        m_Offset: {x: 0.00048560003, y: 0}
     m_Ints: []
     m_Floats: []
     m_Colors: []
