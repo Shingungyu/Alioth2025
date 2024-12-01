@@ -96,6 +96,7 @@ public class AudioManager : MonoBehaviour
                 break;
 
             case "Lobby":
+            case "Option":
                 newClip = audioClips[0];
                 break;
         }

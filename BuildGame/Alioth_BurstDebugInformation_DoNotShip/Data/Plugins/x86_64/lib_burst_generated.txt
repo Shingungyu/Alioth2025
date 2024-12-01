@@ -21,8 +21,10 @@ Library: C:\Users\rosa5\Desktop\Alioth\Alioth\Temp\BurstOutput\Data\Plugins\x86_
 --assembly-defines=Unity.2D.PixelPerfect;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.TextMeshPro;
+--assembly-defines=Cinemachine;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
 --assembly-defines=Unity.Burst.Unsafe;
+--assembly-defines=DOTween;
 --assembly-defines=System.Runtime;
 --assembly-defines=netstandard;
 --assembly-defines=Mono.Security;
@@ -106,8 +108,10 @@ Library: C:\Users\rosa5\Desktop\Alioth\Alioth\Temp\BurstOutput\Data\Plugins\x86_
 --assembly-defines=Unity.2D.PixelPerfect;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.TextMeshPro;
+--assembly-defines=Cinemachine;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
 --assembly-defines=Unity.Burst.Unsafe;
+--assembly-defines=DOTween;
 --assembly-defines=System.Runtime;
 --assembly-defines=netstandard;
 --assembly-defines=Mono.Security;
