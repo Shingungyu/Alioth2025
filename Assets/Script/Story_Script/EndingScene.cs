@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartStoryScene : MonoBehaviour
+public class EndingScene : MonoBehaviour
 {
     public float scrollSpeed = 100f;        // 기본 스크롤 속도
     public float boostMultiplier = 2f;    // 스페이스 바를 누를 때의 배속
@@ -27,10 +27,8 @@ public class StartStoryScene : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            SceneManager.LoadScene("Stg1-1");
+            SceneManager.LoadScene("Lobby");
         }
-
-
 
         // 텍스트를 위로 이동
         textRect.anchoredPosition += Vector2.up * currentSpeed * Time.deltaTime;
@@ -42,5 +40,4 @@ public class StartStoryScene : MonoBehaviour
             // UnityEngine.SceneManagement.SceneManager.LoadScene("NextSceneName");
         }
     }
-
 }
