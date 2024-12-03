@@ -7035,7 +7035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 1117616120}
   spawnInterval: 2
-  spawnRangeX: 8
+  spawnRangeX: 15
   spawnHeight: 10
   parentTransform: {fileID: 0}
   objectsPerSpawn: 5
