@@ -4514,11 +4514,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 2092241702729954433, guid: 6a6946342006d1f4488368e5676a8bdf, type: 3}
-  posX1: 1
-  posX2: 1
-  posX3: 1
-  posY: 1
-  spawnTime: 1
+  posX1: 2.5
+  posX2: 30
+  posX3: 30
+  posY: 3
+  spawnTime: 2
 --- !u!114 &1490353865
 MonoBehaviour:
   m_ObjectHideFlags: 0
