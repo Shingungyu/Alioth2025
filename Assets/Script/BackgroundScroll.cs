@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BackgroundScroll : MonoBehaviour
 {
     public Image background;  // background 오브젝트의 Image 컴포넌트를 연결
-    public float backgroundSpeed = 0.1f;  // 스크롤 속도
+    private float backgroundSpeed = 0.05f;  // 스크롤 속도
 
     private Vector2 backgroundScrollOffset = Vector2.zero;
 
